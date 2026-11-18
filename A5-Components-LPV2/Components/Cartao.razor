@@ -1,0 +1,19 @@
+<div class="card">
+	@if (!string.IsNullOrWhiteSpace(Titulo))
+	{
+		<div class="card-header">
+			@Titulo
+		</div>
+	}
+	<div class="card-body">
+		@ChildContent
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public string Titulo { get; set; } = "";
+
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+}
